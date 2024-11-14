@@ -50,6 +50,13 @@ if exist wireguard_installer.exe (
     start /wait wireguard_installer.exe /S
 )
 
+REM Download and install OBS Studio
+echo Downloading and installing OBS Studio...
+curl -L -o obs_installer.exe "https://cdn-fastly.obsproject.com/downloads/OBS-Studio-29.0.2-Full-Installer-x64.exe"
+if exist obs_installer.exe (
+    start /wait obs_installer.exe /S
+)
+
 REM === Development Tools Installation ===
 REM Download and install VS Code silently, prevent auto-launch
 echo Downloading and installing Visual Studio Code...
@@ -122,10 +129,11 @@ $Shortcut.Save()"
 REM Display installation completion message
 echo Installation complete! You can find:
 echo - Chrome and Firefox in the Start Menu
-echo - Wireshark on the Desktop
+echo - Wireshark on the Desktop  
 echo - Process Monitor and other Sysinternals tools on the Desktop
 echo - Nmap in the Start Menu
 echo - WireGuard in the Start Menu
+echo - OBS Studio in the Start Menu
 echo - Visual Studio Code in the Start Menu
 echo - 7-Zip in the Start Menu
 echo - Complete Sysinternals Suite in C:\SysinternalTools
