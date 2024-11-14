@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <!-- Enable network access for downloading tools and updates -->
+    <Networking>Enable</Networking>
+
+    <!-- Map the host Downloads folder to the sandbox for file access -->
+    <MappedFolders>
+        <MappedFolder>
+            <!-- Path to the host system's Downloads folder -->
+            <HostFolder>C:\Users\benjamin.fraley\Downloads</HostFolder>
+            <!-- Where the folder will appear in the sandbox -->
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Downloads</SandboxFolder>
+            <!-- Allow modifications to mapped folder contents -->
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+    </MappedFolders>
+
+    <!-- Command to run when the sandbox starts -->
+    <LogonCommand>
+        <!-- Start PowerShell with elevated privileges, bypass execution policy, then run install script -->
+        <Command>cmd.exe /c start /wait C:\Users\WDAGUtilityAccount\Downloads\install.bat"</Command>
+    </LogonCommand>
+
+    <!-- Enable enhanced security features -->
+    <ProtectedClient>Enable</ProtectedClient>
+
+    <!-- Allow copy/paste between host and sandbox -->
+    <ClipboardRedirection>Enable</ClipboardRedirection>
+
+    <!-- Allocate 8GB of RAM to the sandbox -->
+    <MemoryInMB>8192</MemoryInMB>
+
+    <!-- Set the computer name for the sandbox -->
+    <Hostname>Benjamins_Burner_Box</Hostname>
+</Configuration>
