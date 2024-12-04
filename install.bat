@@ -38,15 +38,16 @@ if exist nmap_installer.exe (
     start /wait nmap_installer.exe /S
 )
 
+REM === Security Tools Installation ===
 echo Downloading and installing WireGuard...
-curl -L -o wireguard_installer.exe "https://download.wireguard.com/windows-client/wireguard-installer-amd64-0.5.3.exe"
+curl -k -L -o wireguard_installer.exe "https://download.wireguard.com/windows-client/wireguard-installer-amd64-0.5.3.exe"
 if exist wireguard_installer.exe (
     start /wait wireguard_installer.exe /S
 )
 
-REM === Tailscale Installation ===
+REM === Tailscale Installation | needed to run `curl` with the `-k` flag for insecure ===
 echo Downloading and installing Tailscale...
-curl -L -o tailscale_installer.msi "https://pkgs.tailscale.com/stable/tailscale-setup.exe"
+curl -k -L -o tailscale_installer.msi "https://pkgs.tailscale.com/stable/tailscale-setup.exe"
 if exist tailscale_installer.msi (
     msiexec /i tailscale_installer.msi /quiet /norestart
 )
