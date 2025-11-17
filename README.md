@@ -9,8 +9,7 @@ Repo to house my Windows Sandbox VM config files. I use this for when I need to 
    - Mozilla Firefox (latest version)
    - Wireshark (4.4.1)
    - Nmap (7.94)
-   - WireGuard (0.5.3)
-   - Tailscale (stable)
+   - OBS
    - Visual Studio Code (latest stable)
    - 7-Zip (latest version)
    - Full Windows Sysinterals Suite
